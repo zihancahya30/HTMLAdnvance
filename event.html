@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Halaman Beranda</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Zihan Cahya Amelia">
+        <meta name="nim" content="233307030">
+        <link rel="icon" type="icon/png" href="gambar/icon.png" sizes="16x16" />
+
+        <style>
+            * {
+                box-sizing: border-box;
+            }
+            body {
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            header {
+                background-color: #666;
+                padding: 30px;
+                text-align: center;
+                font-size: 35px;
+                color: white;
+            }
+            nav {
+                float: left;
+                width: 30%;
+                height: 500px; /*only for demonstration, should be removed */
+                background: #ccc;
+                padding: 20px;
+            }
+            nav ul {
+                list-style-type: none;
+                padding: 0;
+            }
+
+            article {
+                float: left;
+                padding: 20px;
+                width: 70%;
+                background-color: #f1f1f1;
+                height: 500px; /*only for demonstration, should be removed*/
+            }
+            section::after {
+                content: "";
+                display: table;
+                clear:both;
+            }
+            footer {
+                background-color: #777;
+                padding: 10px;
+                text-align: center;
+                color: white;
+            }
+            @media (max-width: 600px) {
+                nav, article {
+                    width: 100%;
+                    height: auto;
+                }
+            }
+        </style>
+    </head>
+        <header>
+            <h2>Ziews</h2>
+        </header>
+        <body>
+            <script>
+                function mouseDown() {
+                  document.getElementById("p1").style.color = "red";
+                }
+                
+                function mouseUp() {
+                  document.getElementById("p1").style.color = "green";
+                }
+                </script>
+        </body>
+        <section>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="gambar.html">Gambar</a></li>
+                    <li><a href="event.html">Event</a></li>
+                    <li><a href="audio.html">Audio</a></li>
+                    <li><a href="video.html">Video</a></li>
+                    <li><a href="svg.html">SVG</a></li>
+                    <li><a href="canvas.html">Canvas</a></li>
+                </ul>
+            </nav>
+
+            <article>
+                <h1>Gambar Pemandangan</h1>
+                <img src="gambar/gambar.jpg" width="180px" height="140px" alt="gambar" onclick="alert('baguss')">
+                <img src="gambar/gambar1.jpg" width="180px" height="140px" alt="gambar1" onclick="alert('baguss')">
+                <img src="gambar/gambar2.jpg" width="180px" height="140px" alt="gambar2" onclick="alert('baguss')"><br>
+                <img src="gambar/gambar4.jpg" width="180px" height="140px" alt="gambar4" onclick="alert('baguss')">
+                <img src="gambar/gambar5.jpg" width="180px" height="140px" alt="gambar5" onclick="alert('baguss')">
+                <img src="gambar/gambar6.jpg" width="180px" height="140px" alt="gambar6" onclick="alert('baguss')">
+                <p><!--Tulis Kesimpulan hasil ujicoba disini--></p>
+                <p>Kesimpulan : <br>
+                     Membuat sebuah event pada gambar<br>
+                     <b>233307030</b><br>
+                     Zihan Cahya Amelia <br>
+                </p>
+            </article>
+        </section>
+
+        <footer>
+            <p>copyright@zihancahyaamelia_233307030</p>
+        </footer>
+    </body>
+</html>
