@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Halaman Beranda</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Zihan Cahya Amelia">
+        <meta name="nim" content="233307030">
+        <link rel="icon" type="icon/png" href="gambar/icon.png" sizes="16x16" />
+
+        <style>
+            * {
+                box-sizing: border-box;
+            }
+            body {
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            header {
+                background-color: #666;
+                padding: 30px;
+                text-align: center;
+                font-size: 35px;
+                color: white;
+            }
+            nav {
+                float: left;
+                width: 30%;
+                height: 600px; /*only for demonstration, should be removed */
+                background: #ccc;
+                padding: 20px;
+            }
+            nav ul {
+                list-style-type: none;
+                padding: 0;
+            }
+            .container {
+            padding: 20px;
+            width: 70%;
+            position: relative;
+            }
+            article {
+                float: left;
+                padding: 20px;
+                width: 70%;
+                background-color: #f1f1f1;
+                height: 600px; /*only for demonstration, should be removed*/
+            }
+            .informasi-pribadi {
+            height: 180px; /* set tinggi kotak informasi pribadi */
+            }
+            .permintaan-pertemuan {
+            height: 180px; /* set tinggi kotak permintaan pertemuan */
+            }
+            section::after {
+                content: "";
+                display: table;
+                clear:both;
+            }
+            footer {
+                background-color: #777;
+                padding: 10px;
+                text-align: center;
+                color: white;
+            }
+            @media (max-width: 600px) {
+                nav, article {
+                    width: 100%;
+                    height: auto;
+                }
+            }
+            /* Tambahkan spasi antara elemen-elemen informasi pribadi */
+            .informasi-pribadi label {
+                display: inline-block;
+                width: 220px; /* Lebar label */
+                margin-right: 10px; /* Spasi antara label dan input */
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <h2>Ziews</h2>
+        </header>
+        
+        <section>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="gambar.html">Gambar</a></li>
+                    <li><a href="event.html">Event</a></li>
+                    <li><a href="audio.html">Audio</a></li>
+                    <li><a href="video.html">Video</a></li>
+                    <li><a href="svg.html">SVG</a></li>
+                    <li><a href="canvas.html">Canvas</a></li>
+                </ul>
+            </nav>
+
+            <article>
+                <h2>Form Penjadwal Pertemuan</h2>
+                <div class="container">
+                    <form action="/proses.php" method="post">
+                        <fieldset class="informasi-pribadi">
+                            <legend>Informasi Pribadi</legend>
+                            <table>
+                                <tr>
+                                    <td><label for="nama">Nama</label></td>
+                                    <td><input type="text" id="nama" name="nama"required></td>
+                                </tr>
+                                <tr>
+                                    <td><label for="telp">No.Telepon </label></td>
+                                    <td><input type="text" id="telp" name="telepon" required></td>
+                                </tr>
+                                <tr>
+                                    <td><label for="email">Alamat Email </label></td>
+                                    <td><input type="text" id="email" name="email" required></td>
+                                </tr>
+                                <tr>
+                                    <td><label for="tanggal lahir">Tanggal Lahir </label></td>
+                                    <td><input type="date" id="tanggal lahir" name="tanggal lahir" min="1987-01-01" max="1993-01-01"></td>
+                                </tr>
+                            </table>
+                        </fieldset>
+                    <div id="content">
+                        <form action="/proses.php" method="post">
+                            <fieldset class="permintaan-pertemuan">
+                                <legend>Permintaan Pertemuan</legend>
+                                <table>
+                                    <tr>
+                                        <td><label for="tujuan pertemuan">Tujuan Pertemuan</label></td>
+                                        <td><input type="text" id="tujuan pertemuan" name="tujuan pertemuan"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label for="tingkat">Tingkat Kepentingan Pertemuan</label></td>
+                                        <td><input type="range" id="tingkat" name="tingkat" min="0" max="50"><br></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label for="tanggal">Tanggal</label></td>
+                                        <td><input type="date" id="tanggal" name="tanggal" min="?php echo date('Y-m-d');?>"></td>
+                                    </tr>
+                                    <tr>
+                                        <td><label for="appt">Select a time : </label></td>
+                                        <td><input type="time" id="appt" name="appt" min="17:00" max="21:00" required></td>
+                                    </tr>
+                                </table>
+                            </fieldset><br>
+                            <input type="submit" value="submit">
+                        </form>
+                    </div>
+                <p>Membuat sebuah form yang dapat menginputkan data</p>
+            </article>
+        </section>
+        <footer>
+            <p>copyright@zihancahyaamelia_233307030</p>
+        </footer>       
+    </body>
+    <script>
+        document.getElementById('tanggal').setAttribute('min', new Date().toISOString().split("T")[0]);
+    </script>
+</html>
